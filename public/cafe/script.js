@@ -1,4 +1,70 @@
 /* =====================================================
+   OPENING VIDEO
+===================================================== */
+
+const intro = document.getElementById("menuIntro");
+const introVideo = document.getElementById("menuIntroVideo");
+const introLoader = document.getElementById("introLoader");
+const introVideoUrl = introVideo.canPlayType("video/webm; codecs=vp9")
+  ? "/__l5e/assets-v1/e7818c16-93c4-40f5-8a8a-b177ebe9e6bd/bake-n-love-intro.webm"
+  : "/__l5e/assets-v1/8755fa9b-8fb5-4a17-b62b-a01fd6d4c5f8/bake-n-love-intro.mp4";
+let introObjectUrl = "";
+let introFinished = false;
+
+function finishIntro() {
+  if (introFinished) return;
+  introFinished = true;
+  intro.classList.add("closing");
+
+  window.setTimeout(() => {
+    document.body.classList.remove("intro-active");
+    document.querySelectorAll("img[data-src]").forEach(image => {
+      image.src = image.dataset.src;
+      image.removeAttribute("data-src");
+    });
+    intro.remove();
+    if (introObjectUrl) URL.revokeObjectURL(introObjectUrl);
+  }, 450);
+}
+
+async function playIntro() {
+  const downloadTimeout = window.setTimeout(finishIntro, 60000);
+
+  try {
+    const response = await fetch(introVideoUrl, { cache: "force-cache" });
+    if (!response.ok) throw new Error("Opening video unavailable");
+
+    const videoBlob = await response.blob();
+    if (introFinished) return;
+
+    await new Promise((resolve, reject) => {
+      introVideo.addEventListener("canplay", resolve, { once: true });
+      introVideo.addEventListener("error", reject, { once: true });
+      introObjectUrl = URL.createObjectURL(videoBlob);
+      introVideo.src = introObjectUrl;
+      introVideo.load();
+      if (introVideo.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) resolve();
+    });
+
+    if (introFinished) return;
+    window.clearTimeout(downloadTimeout);
+    introVideo.classList.add("ready");
+    introLoader.classList.add("hidden");
+    introVideo.addEventListener("ended", finishIntro, { once: true });
+    introVideo.addEventListener("error", finishIntro, { once: true });
+
+    const playbackTimeout = window.setTimeout(finishIntro, 15000);
+    introVideo.addEventListener("ended", () => window.clearTimeout(playbackTimeout), { once: true });
+    await introVideo.play();
+  } catch {
+    window.clearTimeout(downloadTimeout);
+    finishIntro();
+  }
+}
+
+playIntro();
+
+/* =====================================================
    FOOD DATA
 ===================================================== */
 
@@ -1697,6 +1763,12 @@ const drinkCategories = ["iced-black-coffee", "cold-brew", "cold-coffee", "coole
 
 function displayPrice(price) { return price.split("/").map(value => "₹" + value).join("/"); }
 
+function imageSource(image) {
+  return document.body.classList.contains("intro-active")
+    ? `data-src="${image}"`
+    : `src="${image}"`;
+}
+
 
 
 
@@ -1754,7 +1826,7 @@ function renderProducts(
       </button>
 
       <div class="product-image">
-        ${food.image ? `<img src="${food.image}" alt="${food.name}">` : ""}
+        ${food.image ? `<img loading="lazy" ${imageSource(food.image)} alt="${food.name}">` : ""}
       </div>
 
       <h3>
@@ -2013,7 +2085,7 @@ function renderCatalogue(
           item.innerHTML = `
 
             <div class="menu-item-image">
-              ${food.image ? `<img src="${food.image}" alt="${food.name}">` : ""}
+              ${food.image ? `<img loading="lazy" ${imageSource(food.image)} alt="${food.name}">` : ""}
             </div>
 
             <div class="menu-item-info">
@@ -2184,10 +2256,12 @@ function special(index) {
     foods[index];
 
 
-  document
-    .getElementById("specialImage")
-    .src =
-      food.image;
+  const specialImage = document.getElementById("specialImage");
+  if (document.body.classList.contains("intro-active")) {
+    specialImage.dataset.src = food.image;
+  } else {
+    specialImage.src = food.image;
+  }
 
 
   document

@@ -19,6 +19,7 @@ function Index() {
     <iframe
       title="Bake ñ Love menu"
       src="/cafe/menu.html"
+      allow="autoplay"
       className="block h-dvh w-full border-0"
     />
   );
