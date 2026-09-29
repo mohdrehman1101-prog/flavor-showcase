@@ -22,7 +22,7 @@ function finishIntro() {
 }
 
 async function playIntro() {
-  const downloadTimeout = window.setTimeout(finishIntro, 30000);
+  const downloadTimeout = window.setTimeout(finishIntro, 60000);
 
   try {
     const response = await fetch(introVideoUrl, { cache: "force-cache" });
@@ -1813,7 +1813,7 @@ function renderProducts(
       </button>
 
       <div class="product-image">
-        ${food.image ? `<img src="${food.image}" alt="${food.name}">` : ""}
+        ${food.image ? `<img loading="lazy" src="${food.image}" alt="${food.name}">` : ""}
       </div>
 
       <h3>
@@ -2072,7 +2072,7 @@ function renderCatalogue(
           item.innerHTML = `
 
             <div class="menu-item-image">
-              ${food.image ? `<img src="${food.image}" alt="${food.name}">` : ""}
+              ${food.image ? `<img loading="lazy" src="${food.image}" alt="${food.name}">` : ""}
             </div>
 
             <div class="menu-item-info">
