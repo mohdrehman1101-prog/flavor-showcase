@@ -8,6 +8,7 @@ const introLoader = document.getElementById("introLoader");
 const introVideoUrl = introVideo.canPlayType("video/webm; codecs=vp9")
   ? "/__l5e/assets-v1/e7818c16-93c4-40f5-8a8a-b177ebe9e6bd/bake-n-love-intro.webm"
   : "/__l5e/assets-v1/8755fa9b-8fb5-4a17-b62b-a01fd6d4c5f8/bake-n-love-intro.mp4";
+let introObjectUrl = "";
 let introFinished = false;
 
 function finishIntro() {
@@ -18,6 +19,7 @@ function finishIntro() {
   window.setTimeout(() => {
     document.body.classList.remove("intro-active");
     intro.remove();
+    if (introObjectUrl) URL.revokeObjectURL(introObjectUrl);
   }, 450);
 }
 
@@ -28,13 +30,14 @@ async function playIntro() {
     const response = await fetch(introVideoUrl, { cache: "force-cache" });
     if (!response.ok) throw new Error("Opening video unavailable");
 
-    await response.arrayBuffer();
+    const videoBlob = await response.blob();
     if (introFinished) return;
 
     await new Promise((resolve, reject) => {
       introVideo.addEventListener("canplay", resolve, { once: true });
       introVideo.addEventListener("error", reject, { once: true });
-      introVideo.src = introVideoUrl;
+      introObjectUrl = URL.createObjectURL(videoBlob);
+      introVideo.src = introObjectUrl;
       introVideo.load();
       if (introVideo.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) resolve();
     });
