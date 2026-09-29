@@ -1,4 +1,64 @@
 /* =====================================================
+   OPENING VIDEO
+===================================================== */
+
+const introVideoUrl = "/__l5e/assets-v1/8755fa9b-8fb5-4a17-b62b-a01fd6d4c5f8/bake-n-love-intro.mp4";
+const intro = document.getElementById("menuIntro");
+const introVideo = document.getElementById("menuIntroVideo");
+const introLoader = document.getElementById("introLoader");
+let introObjectUrl = "";
+let introFinished = false;
+
+function finishIntro() {
+  if (introFinished) return;
+  introFinished = true;
+  intro.classList.add("closing");
+
+  window.setTimeout(() => {
+    document.body.classList.remove("intro-active");
+    intro.remove();
+    if (introObjectUrl) URL.revokeObjectURL(introObjectUrl);
+  }, 450);
+}
+
+async function playIntro() {
+  const downloadTimeout = window.setTimeout(finishIntro, 30000);
+
+  try {
+    const response = await fetch(introVideoUrl, { cache: "force-cache" });
+    if (!response.ok) throw new Error("Opening video unavailable");
+
+    const videoBlob = await response.blob();
+    if (introFinished) return;
+
+    introObjectUrl = URL.createObjectURL(videoBlob);
+    introVideo.src = introObjectUrl;
+    introVideo.load();
+
+    await new Promise((resolve, reject) => {
+      introVideo.addEventListener("canplaythrough", resolve, { once: true });
+      introVideo.addEventListener("error", reject, { once: true });
+    });
+
+    if (introFinished) return;
+    window.clearTimeout(downloadTimeout);
+    introVideo.classList.add("ready");
+    introLoader.classList.add("hidden");
+    introVideo.addEventListener("ended", finishIntro, { once: true });
+    introVideo.addEventListener("error", finishIntro, { once: true });
+
+    const playbackTimeout = window.setTimeout(finishIntro, 15000);
+    introVideo.addEventListener("ended", () => window.clearTimeout(playbackTimeout), { once: true });
+    await introVideo.play();
+  } catch {
+    window.clearTimeout(downloadTimeout);
+    finishIntro();
+  }
+}
+
+playIntro();
+
+/* =====================================================
    FOOD DATA
 ===================================================== */
 
