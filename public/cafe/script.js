@@ -2256,10 +2256,12 @@ function special(index) {
     foods[index];
 
 
-  document
-    .getElementById("specialImage")
-    .dataset.src =
-      food.image;
+  const specialImage = document.getElementById("specialImage");
+  if (document.body.classList.contains("intro-active")) {
+    specialImage.dataset.src = food.image;
+  } else {
+    specialImage.src = food.image;
+  }
 
 
   document
