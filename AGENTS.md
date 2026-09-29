@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+The user-supplied café menu is served unchanged from `public/cafe/` and displayed in a viewport-sized iframe on `/`, preserving its original HTML/CSS/JavaScript behavior and mobile frame.
