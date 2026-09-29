@@ -1,3 +1,4 @@
 - [x] Replace old café dishes with the supplied menu, prices, labels, descriptions, and add-ons.
 - [x] Match ZIP photos to menu items with the same dish name (including the Tripple/Triple spelling).
 - [x] Verify the live menu and interaction on mobile.
+- [ ] Make the preview's `/index` address show the updated menu.
