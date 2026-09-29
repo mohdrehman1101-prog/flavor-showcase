@@ -6,7 +6,6 @@ const introVideoUrl = "/__l5e/assets-v1/8755fa9b-8fb5-4a17-b62b-a01fd6d4c5f8/bak
 const intro = document.getElementById("menuIntro");
 const introVideo = document.getElementById("menuIntroVideo");
 const introLoader = document.getElementById("introLoader");
-let introObjectUrl = "";
 let introFinished = false;
 
 function finishIntro() {
@@ -17,7 +16,6 @@ function finishIntro() {
   window.setTimeout(() => {
     document.body.classList.remove("intro-active");
     intro.remove();
-    if (introObjectUrl) URL.revokeObjectURL(introObjectUrl);
   }, 450);
 }
 
@@ -28,11 +26,10 @@ async function playIntro() {
     const response = await fetch(introVideoUrl, { cache: "force-cache" });
     if (!response.ok) throw new Error("Opening video unavailable");
 
-    const videoBlob = await response.blob();
+    await response.arrayBuffer();
     if (introFinished) return;
 
-    introObjectUrl = URL.createObjectURL(videoBlob);
-    introVideo.src = introObjectUrl;
+    introVideo.src = introVideoUrl;
     introVideo.load();
 
     await new Promise((resolve, reject) => {
