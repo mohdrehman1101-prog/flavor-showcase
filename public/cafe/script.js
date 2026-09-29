@@ -29,12 +29,12 @@ async function playIntro() {
     await response.arrayBuffer();
     if (introFinished) return;
 
-    introVideo.src = introVideoUrl;
-    introVideo.load();
-
     await new Promise((resolve, reject) => {
-      introVideo.addEventListener("canplaythrough", resolve, { once: true });
+      introVideo.addEventListener("canplay", resolve, { once: true });
       introVideo.addEventListener("error", reject, { once: true });
+      introVideo.src = introVideoUrl;
+      introVideo.load();
+      if (introVideo.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) resolve();
     });
 
     if (introFinished) return;
