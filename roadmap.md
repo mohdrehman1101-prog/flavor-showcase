@@ -1,3 +1,3 @@
 - [x] Replace old café dishes with the supplied menu, prices, labels, descriptions, and add-ons.
 - [x] Match ZIP photos to menu items with the same dish name (including the Tripple/Triple spelling).
-- [ ] Verify the live menu and interaction on mobile.
+- [x] Verify the live menu and interaction on mobile.

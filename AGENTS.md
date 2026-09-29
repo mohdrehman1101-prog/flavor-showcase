@@ -9,4 +9,5 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-The user-supplied café menu is served unchanged from `public/cafe/` and displayed in a viewport-sized iframe on `/`, preserving its original HTML/CSS/JavaScript behavior and mobile frame.
+The café menu is served from `public/cafe/` and displayed in a viewport-sized iframe on `/`; keep its original HTML/CSS/JavaScript interactions and mobile frame while editing menu data in `script.js`.
+Uploaded dish photos are CDN assets with pointers in `src/assets/dishes/`; use each pointer's URL only for a matching dish so the repository stays free of large binaries.
