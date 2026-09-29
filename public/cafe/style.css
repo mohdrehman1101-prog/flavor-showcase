@@ -894,3 +894,5 @@ button {
   }
 
 }
+.highlight-tag { display: inline-block; color: #2527c5; font-size: 11px; font-weight: 700; margin-top: 5px; }
+.category-extras { color: #555b70; font-size: 12px; line-height: 1.5; margin: 12px 0 22px; }
