@@ -18,6 +18,10 @@ function finishIntro() {
 
   window.setTimeout(() => {
     document.body.classList.remove("intro-active");
+    document.querySelectorAll("img[data-src]").forEach(image => {
+      image.src = image.dataset.src;
+      image.removeAttribute("data-src");
+    });
     intro.remove();
     if (introObjectUrl) URL.revokeObjectURL(introObjectUrl);
   }, 450);
@@ -1759,6 +1763,12 @@ const drinkCategories = ["iced-black-coffee", "cold-brew", "cold-coffee", "coole
 
 function displayPrice(price) { return price.split("/").map(value => "₹" + value).join("/"); }
 
+function imageSource(image) {
+  return document.body.classList.contains("intro-active")
+    ? `data-src="${image}"`
+    : `src="${image}"`;
+}
+
 
 
 
@@ -1816,7 +1826,7 @@ function renderProducts(
       </button>
 
       <div class="product-image">
-        ${food.image ? `<img loading="lazy" src="${food.image}" alt="${food.name}">` : ""}
+        ${food.image ? `<img loading="lazy" ${imageSource(food.image)} alt="${food.name}">` : ""}
       </div>
 
       <h3>
@@ -2075,7 +2085,7 @@ function renderCatalogue(
           item.innerHTML = `
 
             <div class="menu-item-image">
-              ${food.image ? `<img loading="lazy" src="${food.image}" alt="${food.name}">` : ""}
+              ${food.image ? `<img loading="lazy" ${imageSource(food.image)} alt="${food.name}">` : ""}
             </div>
 
             <div class="menu-item-info">
@@ -2248,7 +2258,7 @@ function special(index) {
 
   document
     .getElementById("specialImage")
-    .src =
+    .dataset.src =
       food.image;
 
 
