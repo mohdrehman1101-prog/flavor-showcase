@@ -1754,16 +1754,13 @@ function renderProducts(
       </button>
 
       <div class="product-image">
-
-        <img
-          src="${food.image}"
-          alt="${food.name}">
-
+        ${food.image ? `<img src="${food.image}" alt="${food.name}">` : ""}
       </div>
 
       <h3>
         ${food.name}
       </h3>
+      ${food.badge ? `<span class="highlight-tag">${food.badge}</span>` : ""}
 
       <div class="product-bottom">
 
@@ -1902,27 +1899,6 @@ function filterCategory(
 
 
 /* =====================================================
-   CATEGORY NAMES
-===================================================== */
-
-const categoryNames = {
-
-  starters: "Starters",
-
-  biryani: "Biryani & Rice",
-
-  breads: "Breads",
-
-  chinese: "Chinese",
-
-  drinks: "Drinks",
-
-  desserts: "Desserts"
-
-};
-
-
-/* =====================================================
    CATALOGUE
 ===================================================== */
 
@@ -1941,7 +1917,9 @@ function renderCatalogue(
         ||
         food.type === filter
         ||
-        food.category === filter;
+        food.category === filter
+        ||
+        (filter === "drinks" && drinkCategories.includes(food.category));
 
       const searchMatch =
         !searchValue
@@ -2035,11 +2013,7 @@ function renderCatalogue(
           item.innerHTML = `
 
             <div class="menu-item-image">
-
-              <img
-                src="${food.image}"
-                alt="${food.name}">
-
+              ${food.image ? `<img src="${food.image}" alt="${food.name}">` : ""}
             </div>
 
             <div class="menu-item-info">
@@ -2048,9 +2022,8 @@ function renderCatalogue(
                 ${food.name}
               </h4>
 
-              <p>
-                ${food.description}
-              </p>
+              ${food.description ? `<p>${food.description}</p>` : ""}
+              ${food.badge ? `<span class="highlight-tag">${food.badge}</span>` : ""}
 
               <span
                 class="food-tag
@@ -2094,6 +2067,13 @@ function renderCatalogue(
 
         });
 
+
+      if (categoryExtras[category]) {
+        const extras = document.createElement("p");
+        extras.className = "category-extras";
+        extras.textContent = categoryExtras[category].join("  |  ");
+        section.appendChild(extras);
+      }
 
       catalogue.appendChild(section);
 
@@ -2162,20 +2142,21 @@ function openDetails(index) {
   document
     .getElementById("detailImage")
     .src =
-      currentFood.image;
+      currentFood.image || "";
+
+  document.getElementById("detailImage").style.display = currentFood.image ? "" : "none";
 
 
   document
     .getElementById("detailDescription")
     .textContent =
-      currentFood.description;
+      currentFood.description || currentFood.badge || "";
 
 
   document
     .getElementById("detailPrice")
     .textContent =
-      "$" +
-      currentFood.price.toFixed(2);
+      displayPrice(currentFood.price);
 
 
   details.classList.add("show");
@@ -2212,8 +2193,7 @@ function special(index) {
   document
     .getElementById("specialPrice")
     .textContent =
-      "$" +
-      food.price.toFixed(2);
+      displayPrice(food.price);
 
 
   document
@@ -2226,6 +2206,8 @@ function special(index) {
 
 }
 
+
+special(0);
 
 /* =====================================================
    AUTOMATIC SPECIAL SLIDER
