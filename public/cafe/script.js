@@ -2,10 +2,12 @@
    OPENING VIDEO
 ===================================================== */
 
-const introVideoUrl = "/__l5e/assets-v1/8755fa9b-8fb5-4a17-b62b-a01fd6d4c5f8/bake-n-love-intro.mp4";
 const intro = document.getElementById("menuIntro");
 const introVideo = document.getElementById("menuIntroVideo");
 const introLoader = document.getElementById("introLoader");
+const introVideoUrl = introVideo.canPlayType("video/webm; codecs=vp9")
+  ? "/__l5e/assets-v1/e7818c16-93c4-40f5-8a8a-b177ebe9e6bd/bake-n-love-intro.webm"
+  : "/__l5e/assets-v1/8755fa9b-8fb5-4a17-b62b-a01fd6d4c5f8/bake-n-love-intro.mp4";
 let introFinished = false;
 
 function finishIntro() {
