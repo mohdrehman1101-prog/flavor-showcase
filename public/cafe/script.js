@@ -6,8 +6,8 @@ const intro = document.getElementById("menuIntro");
 const introVideo = document.getElementById("menuIntroVideo");
 const introLoader = document.getElementById("introLoader");
 const introVideoUrl = introVideo.canPlayType("video/webm; codecs=vp9")
-  ? "/__l5e/assets-v1/e7818c16-93c4-40f5-8a8a-b177ebe9e6bd/bake-n-love-intro.webm"
-  : "/__l5e/assets-v1/8755fa9b-8fb5-4a17-b62b-a01fd6d4c5f8/bake-n-love-intro.mp4";
+  ? "/cafe/assets/bake-n-love-intro.webm"
+  : "/cafe/assets/bake-n-love-intro.mp4";
 let introObjectUrl = "";
 let introFinished = false;
 
@@ -72,7 +72,7 @@ const foods = [
   {
     "name": "Triple Cheese Pizza",
     "price": "199",
-    "image": "/__l5e/assets-v1/e44e8046-29ec-4df5-9236-ff474aa5e936/Tripple Cheese Pizza.png",
+    "image": "/cafe/assets/Tripple Cheese Pizza.png",
     "description": "",
     "badge": "",
     "category": "pizza",
@@ -82,7 +82,7 @@ const foods = [
   {
     "name": "Vegetable Verona Pizza",
     "price": "249",
-    "image": "/__l5e/assets-v1/722906d6-1ce1-4327-836a-9e74a3f60a21/Vegetable Verona Pizza.png",
+    "image": "/cafe/assets/Vegetable Verona Pizza.png",
     "description": "",
     "badge": "",
     "category": "pizza",
@@ -92,7 +92,7 @@ const foods = [
   {
     "name": "Cheese Corn Pizza",
     "price": "229",
-    "image": "/__l5e/assets-v1/030701b9-74cf-4bb1-a918-1d1c22bcc333/Cheese Corn Pizza.png",
+    "image": "/cafe/assets/Cheese Corn Pizza.png",
     "description": "",
     "badge": "",
     "category": "pizza",
@@ -102,7 +102,7 @@ const foods = [
   {
     "name": "Tandoori Paneer Pizza",
     "price": "239",
-    "image": "/__l5e/assets-v1/a2ab935f-a670-4932-9344-15324a492ad7/Tandoori Paneer Pizza.png",
+    "image": "/cafe/assets/Tandoori Paneer Pizza.png",
     "description": "",
     "badge": "MUST TRY",
     "category": "pizza",
@@ -112,7 +112,7 @@ const foods = [
   {
     "name": "Peri Peri Paneer Pizza",
     "price": "249",
-    "image": "/__l5e/assets-v1/2033a945-b99c-4905-aec4-81a5f01bac6e/Peri Peri Paneer Pizza.png",
+    "image": "/cafe/assets/Peri Peri Paneer Pizza.png",
     "description": "",
     "badge": "",
     "category": "pizza",
@@ -122,7 +122,7 @@ const foods = [
   {
     "name": "Chicken Tikka Pizza",
     "price": "289",
-    "image": "/__l5e/assets-v1/ffe07718-ae96-436c-b4cf-ed2bfa4c0164/Chicken Tikka Pizza.png",
+    "image": "/cafe/assets/Chicken Tikka Pizza.png",
     "description": "",
     "badge": "",
     "category": "pizza",
@@ -132,7 +132,7 @@ const foods = [
   {
     "name": "Chicken Keema Pizza",
     "price": "299",
-    "image": "/__l5e/assets-v1/dd508892-174d-49c8-a8bc-c155568a009e/Chicken Keema Pizza.png",
+    "image": "/cafe/assets/Chicken Keema Pizza.png",
     "description": "",
     "badge": "MUST TRY",
     "category": "pizza",
@@ -142,7 +142,7 @@ const foods = [
   {
     "name": "Crispy Corn",
     "price": "149",
-    "image": "/__l5e/assets-v1/fcb7a14f-676b-48de-95c4-31d18c798430/Crispy Corn.png",
+    "image": "/cafe/assets/Crispy Corn.png",
     "description": "",
     "badge": "",
     "category": "chinese",
@@ -152,7 +152,7 @@ const foods = [
   {
     "name": "Honey Chilli Potato",
     "price": "159",
-    "image": "/__l5e/assets-v1/64f016a0-56ba-4ed7-9a6f-43b047596320/Honey Chilli Potato.png",
+    "image": "/cafe/assets/Honey Chilli Potato.png",
     "description": "",
     "badge": "",
     "category": "chinese",
@@ -162,7 +162,7 @@ const foods = [
   {
     "name": "Veg Noodles",
     "price": "169",
-    "image": "/__l5e/assets-v1/da891297-35f9-433d-8026-535bd20c50e6/Veg Noodles.png",
+    "image": "/cafe/assets/Veg Noodles.png",
     "description": "",
     "badge": "",
     "category": "chinese",
@@ -172,7 +172,7 @@ const foods = [
   {
     "name": "Hakka Noodles",
     "price": "179",
-    "image": "/__l5e/assets-v1/6a334650-48fa-4302-999f-5f9f5c13e7f7/Hakka Noodles.png",
+    "image": "/cafe/assets/Hakka Noodles.png",
     "description": "",
     "badge": "",
     "category": "chinese",
@@ -182,7 +182,7 @@ const foods = [
   {
     "name": "Garlic Noodles",
     "price": "179",
-    "image": "/__l5e/assets-v1/bb0a488d-e850-49e4-b4ed-2d7d4ab027d1/Garlic Noodles.png",
+    "image": "/cafe/assets/Garlic Noodles.png",
     "description": "",
     "badge": "",
     "category": "chinese",
@@ -192,7 +192,7 @@ const foods = [
   {
     "name": "Fried Rice",
     "price": "169",
-    "image": "/__l5e/assets-v1/cb7f39d7-929b-4f52-8ae3-b49a60112f75/Fried Rice.png",
+    "image": "/cafe/assets/Fried Rice.png",
     "description": "",
     "badge": "",
     "category": "chinese",
@@ -202,7 +202,7 @@ const foods = [
   {
     "name": "Chilli Paneer",
     "price": "199",
-    "image": "/__l5e/assets-v1/1e3dcca7-95e9-4da4-a881-8d8e26fdf995/Chilli Paneer.png",
+    "image": "/cafe/assets/Chilli Paneer.png",
     "description": "",
     "badge": "",
     "category": "chinese",
@@ -212,7 +212,7 @@ const foods = [
   {
     "name": "Chilli Chicken",
     "price": "209",
-    "image": "/__l5e/assets-v1/f58f460a-e7cf-4ee0-beab-d8db7157d78f/Chilli Chicken.png",
+    "image": "/cafe/assets/Chilli Chicken.png",
     "description": "",
     "badge": "",
     "category": "chinese",
@@ -222,7 +222,7 @@ const foods = [
   {
     "name": "Maggi Ramen Bowl",
     "price": "169",
-    "image": "/__l5e/assets-v1/bbe1e3c5-07cf-43df-90cb-8cd0521a52bf/Maggi Ramen Bowl.png",
+    "image": "/cafe/assets/Maggi Ramen Bowl.png",
     "description": "",
     "badge": "CHEF CHOICE",
     "category": "chinese",
@@ -232,7 +232,7 @@ const foods = [
   {
     "name": "Asian Bowl",
     "price": "209",
-    "image": "/__l5e/assets-v1/cff20c0c-37f0-4016-8662-f141ad51728e/Asian Bowl.png",
+    "image": "/cafe/assets/Asian Bowl.png",
     "description": "",
     "badge": "",
     "category": "chinese",
@@ -242,7 +242,7 @@ const foods = [
   {
     "name": "Burrito Bliss Bowl",
     "price": "209",
-    "image": "/__l5e/assets-v1/7aebf4b2-06a3-4e0e-87d4-5a555ad497f0/Burrito Bliss Bowl.png",
+    "image": "/cafe/assets/Burrito Bliss Bowl.png",
     "description": "",
     "badge": "",
     "category": "chinese",
@@ -252,7 +252,7 @@ const foods = [
   {
     "name": "Lemon Pepper Chicken",
     "price": "209",
-    "image": "/__l5e/assets-v1/059d610e-b415-4496-a30f-78458a85aca5/Lemon Pepper Chicken.png",
+    "image": "/cafe/assets/Lemon Pepper Chicken.png",
     "description": "",
     "badge": "",
     "category": "chinese",
@@ -262,7 +262,7 @@ const foods = [
   {
     "name": "Dragon Paneer",
     "price": "209",
-    "image": "/__l5e/assets-v1/833abf9d-ed15-44fb-b028-d36bc3450ea2/Dragon Paneer.png",
+    "image": "/cafe/assets/Dragon Paneer.png",
     "description": "",
     "badge": "CHEF CHOICE",
     "category": "chinese",
@@ -272,7 +272,7 @@ const foods = [
   {
     "name": "Dragon Chicken",
     "price": "269",
-    "image": "/__l5e/assets-v1/73e268c1-0228-4717-b534-b27896f403d4/Dragon Chicken.png",
+    "image": "/cafe/assets/Dragon Chicken.png",
     "description": "",
     "badge": "CHEF CHOICE",
     "category": "chinese",
