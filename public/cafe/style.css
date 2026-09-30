@@ -646,6 +646,11 @@ button {
   object-fit: cover;
 }
 
+.menu-tile.no-image {
+  aspect-ratio: auto;
+  min-height: 96px;
+}
+
 .menu-tile.has-image::before {
   content: "";
   position: absolute;

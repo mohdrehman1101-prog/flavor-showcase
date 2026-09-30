@@ -1801,6 +1801,8 @@ function renderMenuGroups() {
       if (document.body.classList.contains("intro-active")) image.dataset.src = pictured.image;
       else image.src = pictured.image;
       button.appendChild(image);
+    } else {
+      button.classList.add("no-image");
     }
     const label = document.createElement("span");
     label.className = "menu-tile-label";
