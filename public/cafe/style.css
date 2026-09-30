@@ -599,6 +599,30 @@ button {
   color: white;
 }
 
+.menu-groups,
+.menu-subcategories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.menu-groups[hidden],
+.menu-subcategories[hidden] {
+  display: none;
+}
+
+.menu-subcategories {
+  margin-top: 12px;
+}
+
+.menu-group-choice,
+.menu-subcategory-choice {
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+}
+
 
 /* ================= CATEGORY TITLE ================= */
 
