@@ -601,9 +601,6 @@ button {
 
 .menu-groups,
 .menu-subcategories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
   margin-top: 16px;
 }
 
@@ -612,15 +609,95 @@ button {
   display: none;
 }
 
-.menu-subcategories {
-  margin-top: 12px;
+.menu-groups,
+.menu-tile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
-.menu-group-choice,
-.menu-subcategory-choice {
-  max-width: 100%;
-  white-space: normal;
+.menu-tile-grid {
+  margin-top: 14px;
+}
+
+.menu-tile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  aspect-ratio: 0.84;
+  overflow: hidden;
+  padding: 13px;
   text-align: left;
+  border-radius: 20px;
+  background: #eef1ff;
+  color: #1719d8;
+}
+
+.menu-tile img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-tile.no-image {
+  aspect-ratio: auto;
+  min-height: 96px;
+}
+
+.menu-tile.has-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(transparent 32%, #111b 100%);
+}
+
+.menu-tile.has-image {
+  color: white;
+}
+
+.menu-tile-label {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.menu-tile-label small {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.menu-tile-arrow {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.menu-back {
+  padding: 10px 15px;
+  border-radius: 25px;
+  background: #eef1ff;
+  color: #1719d8;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.menu-tile:focus-visible,
+.menu-back:focus-visible {
+  outline: 2px solid #1719d8;
+  outline-offset: 2px;
 }
 
 

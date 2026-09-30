@@ -1784,42 +1784,83 @@ function matchesType(food, filter) {
 function renderMenuGroups() {
   menuGroupsElement.innerHTML = "";
   menuSubcategoriesElement.innerHTML = "";
+  menuGroupsElement.hidden = selectedGroup !== null;
   menuSubcategoriesElement.hidden = selectedGroup === null;
 
-  menuGroups.forEach((group, index) => {
-    if (!foods.some(food => group.categories.includes(food.category) && matchesType(food, currentCategory))) return;
-
+  const makeTile = (name, items, onClick) => {
     const button = document.createElement("button");
     button.type = "button";
-    button.className = "category menu-group-choice" + (selectedGroup === index ? " active" : "");
-    button.textContent = group.name;
-    button.setAttribute("aria-expanded", String(selectedGroup === index));
-    button.onclick = () => {
-      selectedGroup = index;
-      selectedSubcategory = null;
-      renderMenuGroups();
-      catalogue.innerHTML = "";
-    };
-    menuGroupsElement.appendChild(button);
-  });
+    button.className = "menu-tile";
+    button.setAttribute("aria-label", name);
+    const pictured = items.find(food => food.image);
+    if (pictured) {
+      button.classList.add("has-image");
+      const image = document.createElement("img");
+      image.alt = "";
+      image.loading = "lazy";
+      if (document.body.classList.contains("intro-active")) image.dataset.src = pictured.image;
+      else image.src = pictured.image;
+      button.appendChild(image);
+    } else {
+      button.classList.add("no-image");
+    }
+    const label = document.createElement("span");
+    label.className = "menu-tile-label";
+    label.textContent = name;
+    const count = document.createElement("small");
+    count.textContent = `${items.length} dishes`;
+    label.appendChild(count);
+    button.appendChild(label);
+    const arrow = document.createElement("span");
+    arrow.className = "menu-tile-arrow";
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "↗";
+    button.appendChild(arrow);
+    button.onclick = onClick;
+    return button;
+  };
 
-  if (selectedGroup === null) return;
+  if (selectedGroup === null) {
+    menuGroups.forEach((group, index) => {
+      const items = foods.filter(food => group.categories.includes(food.category) && matchesType(food, currentCategory));
+      if (!items.length) return;
+      menuGroupsElement.appendChild(makeTile(group.name, items, () => {
+        selectedGroup = index;
+        selectedSubcategory = null;
+        renderMenuGroups();
+        catalogue.innerHTML = "";
+      }));
+    });
+    return;
+  }
 
+  const back = document.createElement("button");
+  back.type = "button";
+  back.className = "menu-back";
+  back.textContent = selectedSubcategory ? `← ${menuGroups[selectedGroup].name}` : "← Categories";
+  back.onclick = () => {
+    if (selectedSubcategory) selectedSubcategory = null;
+    else selectedGroup = null;
+    catalogue.innerHTML = "";
+    renderMenuGroups();
+  };
+  menuSubcategoriesElement.appendChild(back);
+
+  if (selectedSubcategory) return;
+
+  const grid = document.createElement("div");
+  grid.className = "menu-tile-grid";
   menuGroups[selectedGroup].categories.forEach(category => {
-    if (!foods.some(food => food.category === category && matchesType(food, currentCategory))) return;
-
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "category menu-subcategory-choice" + (selectedSubcategory === category ? " active" : "");
-    button.textContent = category === "hot-milk-coffee" ? "HOT COFFEE (WITH MILK)" : categoryNames[category];
-    button.setAttribute("aria-pressed", String(selectedSubcategory === category));
-    button.onclick = () => {
+    const items = foods.filter(food => food.category === category && matchesType(food, currentCategory));
+    if (!items.length) return;
+    const name = category === "hot-milk-coffee" ? "HOT COFFEE (WITH MILK)" : categoryNames[category];
+    grid.appendChild(makeTile(name, items, () => {
       selectedSubcategory = category;
       renderMenuGroups();
       renderCatalogue(category);
-    };
-    menuSubcategoriesElement.appendChild(button);
+    }));
   });
+  menuSubcategoriesElement.appendChild(grid);
 }
 
 function displayPrice(price) { return price.split("/").map(value => "₹" + value).join("/"); }

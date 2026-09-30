@@ -13,4 +13,4 @@ The café menu is served from `public/cafe/` and displayed in a viewport-sized i
 Uploaded dish photos are CDN assets with pointers in `src/assets/dishes/`; use each pointer's URL only for a matching dish so the repository stays free of large binaries.
 The menu opening video is a fully preloaded, muted CDN asset shown by `public/cafe/`; keep a timed fallback so slow or failed networks cannot trap users before the menu.
 - Site images/videos live as real files in `public/cafe/assets/` and are referenced as `/cafe/assets/<name>` — why: CDN `/__l5e/` URLs only work on Lovable hosting, not Netlify. To replace media, overwrite the file with the same name (or update the reference).
-- Menu group navigation is rendered from category IDs in `public/cafe/script.js`, beneath the unchanged type filter; select one sub-category to render its existing dishes so the initial mobile menu stays short.
+- Menu group navigation uses photo tiles drawn only from matching existing dishes, rendered from category IDs in `public/cafe/script.js` beneath the unchanged type filter; drill down group → sub-category → existing dishes to keep mobile browsing short.

@@ -4,3 +4,4 @@
 - [x] Make the preview's `/index` address show the updated menu.
 - [x] Play the supplied opening video before revealing the unchanged menu, with slow-network loading and safe fallback.
 - [x] Group the menu below the existing VEG / NON-VEG filters into six main groups with tap-to-open sub-categories and unchanged dish cards.
+- [x] Replace the category chips below the type filter with video-style photographic category tiles and drill-down, preserving names and current theme.
