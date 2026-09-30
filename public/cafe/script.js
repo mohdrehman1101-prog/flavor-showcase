@@ -2059,13 +2059,8 @@ function renderCatalogue(
     foods.filter(food => {
 
       const categoryMatch =
-        filter === "all"
-        ||
-        food.type === filter
-        ||
-        food.category === filter
-        ||
-        (filter === "drinks" && drinkCategories.includes(food.category));
+        (filter === "all" || matchesType(food, filter) || food.category === filter) &&
+        (searchValue || !selectedSubcategory || matchesType(food, currentCategory));
 
       const searchMatch =
         !searchValue
