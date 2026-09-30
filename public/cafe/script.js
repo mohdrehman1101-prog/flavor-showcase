@@ -1761,6 +1761,67 @@ const categoryExtras = {
 
 const drinkCategories = ["iced-black-coffee", "cold-brew", "cold-coffee", "coolers", "shakes", "smoothies", "hot-black-coffee", "hot-milk-coffee"];
 
+const menuGroups = [
+  { name: "FOOD", categories: ["pizza", "burger", "sandwich", "wraps", "pasta", "momos"] },
+  { name: "STARTERS & SIDES", categories: ["chinese", "bruschetta", "bites", "platter", "soups", "nachos", "fries", "bread"] },
+  { name: "COFFEE", categories: ["iced-black-coffee", "cold-brew", "cold-coffee", "hot-black-coffee", "hot-milk-coffee"] },
+  { name: "COLD BEVERAGES", categories: ["coolers", "shakes", "smoothies"] },
+  { name: "BREAKFAST", categories: ["eggs"] },
+  { name: "DESSERTS & BAKERY", categories: ["waffle", "cheesecake", "dessert"] }
+];
+
+// Bread & More remains accessible under the closest existing group.
+const menuGroupsElement = document.getElementById("menuGroups");
+const menuSubcategoriesElement = document.getElementById("menuSubcategories");
+let selectedGroup = null;
+let selectedSubcategory = null;
+
+function matchesType(food, filter) {
+  return filter === "all" || food.type === filter ||
+    (filter === "drinks" && drinkCategories.includes(food.category));
+}
+
+function renderMenuGroups() {
+  menuGroupsElement.innerHTML = "";
+  menuSubcategoriesElement.innerHTML = "";
+  menuSubcategoriesElement.hidden = selectedGroup === null;
+
+  menuGroups.forEach((group, index) => {
+    if (!foods.some(food => group.categories.includes(food.category) && matchesType(food, currentCategory))) return;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "category menu-group-choice" + (selectedGroup === index ? " active" : "");
+    button.textContent = group.name;
+    button.setAttribute("aria-expanded", String(selectedGroup === index));
+    button.onclick = () => {
+      selectedGroup = index;
+      selectedSubcategory = null;
+      renderMenuGroups();
+      catalogue.innerHTML = "";
+    };
+    menuGroupsElement.appendChild(button);
+  });
+
+  if (selectedGroup === null) return;
+
+  menuGroups[selectedGroup].categories.forEach(category => {
+    if (!foods.some(food => food.category === category && matchesType(food, currentCategory))) return;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "category menu-subcategory-choice" + (selectedSubcategory === category ? " active" : "");
+    button.textContent = category === "hot-milk-coffee" ? "HOT COFFEE (WITH MILK)" : categoryNames[category];
+    button.setAttribute("aria-pressed", String(selectedSubcategory === category));
+    button.onclick = () => {
+      selectedSubcategory = category;
+      renderMenuGroups();
+      renderCatalogue(category);
+    };
+    menuSubcategoriesElement.appendChild(button);
+  });
+}
+
 function displayPrice(price) { return price.split("/").map(value => "₹" + value).join("/"); }
 
 function imageSource(image) {
@@ -1881,10 +1942,10 @@ document
 
         renderProducts();
 
-        renderCatalogue(
-          currentCategory,
-          ""
-        );
+        menuGroupsElement.hidden = false;
+        renderMenuGroups();
+        if (selectedSubcategory) renderCatalogue(selectedSubcategory);
+        else catalogue.innerHTML = "";
 
         return;
 
@@ -1909,6 +1970,8 @@ document
         filtered.slice(0, 6)
       );
 
+      menuGroupsElement.hidden = true;
+      menuSubcategoriesElement.hidden = true;
       renderCatalogue(
         "all",
         value
@@ -1930,7 +1993,14 @@ function showAll() {
 
   renderProducts();
 
-  renderCatalogue("all");
+  currentCategory = "all";
+  selectedGroup = null;
+  selectedSubcategory = null;
+  document.querySelectorAll("#categoryNav .category").forEach(btn => btn.classList.remove("active"));
+  document.querySelector("#categoryNav .category").classList.add("active");
+  menuGroupsElement.hidden = false;
+  renderMenuGroups();
+  catalogue.innerHTML = "";
 
   document
     .getElementById("menuSection")
@@ -1954,7 +2024,7 @@ function filterCategory(
     category;
 
   document
-    .querySelectorAll(".category")
+    .querySelectorAll("#categoryNav .category")
     .forEach(btn =>
       btn.classList.remove("active")
     );
@@ -1965,7 +2035,11 @@ function filterCategory(
     .getElementById("search")
     .value = "";
 
-  renderCatalogue(category);
+  selectedGroup = null;
+  selectedSubcategory = null;
+  menuGroupsElement.hidden = false;
+  renderMenuGroups();
+  catalogue.innerHTML = "";
 
 }
 
@@ -2182,7 +2256,7 @@ function renderCatalogue(
 
 }
 
-renderCatalogue();
+renderMenuGroups();
 
 
 /* =====================================================
