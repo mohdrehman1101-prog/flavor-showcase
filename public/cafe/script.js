@@ -52,6 +52,7 @@ async function playIntro() {
     introLoader.classList.add("hidden");
     introVideo.addEventListener("ended", finishIntro, { once: true });
     introVideo.addEventListener("error", finishIntro, { once: true });
+    introVideo.playbackRate = 2;
 
     const playbackTimeout = window.setTimeout(finishIntro, 15000);
     introVideo.addEventListener("ended", () => window.clearTimeout(playbackTimeout), { once: true });
