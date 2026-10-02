@@ -7,6 +7,8 @@
 :root {
   --cafe-pink: #E7B8B3;
   --cafe-sage: #8FA79A;
+  --cafe-cream: #F8F3EF;
+  --cafe-beige: #EDE6DE;
   --cafe-sage-ink: #405B4C;
   --cafe-pink-tint: color-mix(in srgb, var(--cafe-pink) 32%, white);
   --cafe-pink-wash: color-mix(in srgb, var(--cafe-pink) 15%, white);
