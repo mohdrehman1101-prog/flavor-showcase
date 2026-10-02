@@ -2270,7 +2270,7 @@ function renderCatalogue(
       <div style="
         text-align:center;
         padding:35px 10px;
-        color:#8e94a4;
+        color:var(--cafe-muted-ink);
       ">
 
         <div style="font-size:35px;">
