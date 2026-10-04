@@ -2047,7 +2047,7 @@ let mv,pairs,open,lock;
 function memInit(){
   const em=['☕','🍕','🍝','🍰','🧊','🍟'];const a=[...em,...em].sort(()=>Math.random()-.5);
   mv=0;pairs=0;open=[];lock=0;$('#mv').textContent=0;$('#pr').textContent=0;
-  $('#mg').innerHTML=a.map(e=>`<div class="mc" data-e="${e}"><div><span class="bk">क</span><span class="fr">${e}</span></div></div>`).join('');
+  $('#mg').innerHTML=a.map(e=>`<div class="mc" data-e="${e}"><div><span class="bk"><img src="/cafe/assets/bake-n-love-logo.png" alt="Bake ñ Love"></span><span class="fr">${e}</span></div></div>`).join('');
 }
 $('#mg').onclick=e=>{const c=e.target.closest('.mc');
   if(!c||lock||c.classList.contains('f'))return;c.classList.add('f');open.push(c);

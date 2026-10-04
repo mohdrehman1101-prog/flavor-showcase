@@ -77,7 +77,8 @@ h3.sub{font-size:20px;margin:16px 14px 10px;font-family:'Pathway Gothic One','Os
 .mc div{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
 .mc.f div{transform:rotateY(180deg)}
 .mc span{position:absolute;inset:0;backface-visibility:hidden;border-radius:10px;display:flex;align-items:center;justify-content:center}
-.mc .bk{background:var(--dark);color:#d9c9a8;font-size:34px;border:2px solid #3a2a22}
+.mc .bk{background:var(--dark);border:2px solid #3a2a22}
+.mc .bk img{width:62%;height:62%;object-fit:contain}
 .mc .fr{transform:rotateY(180deg);background:#f5e6cc;font-size:44px}
 .mc.m .fr{background:#d9e6c9}
 .pz{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:var(--dark);padding:3px;border-radius:10px;aspect-ratio:1.1}
