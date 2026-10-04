@@ -1961,7 +1961,7 @@ const N={"PIZZERIA MODE": "Vegetable @ ₹30 · Cheese @ ₹50 · Extra Dip @ �
 const FAV=["Triple Cheese Pizza", "Vegetable Verona Pizza", "Cheese Corn Pizza", "Tandoori Paneer Pizza", "Peri Peri Paneer Pizza"];
 const BG=['#e8d5b5','#d9c3a0','#cfe0c0','#f0d5c0','#d8cfe0','#c9dbe0'];
 const $=s=>document.querySelector(s);
-const media=it=>it.img?`background-image:url(${it.img})`:it.emoji?`background:${BG[it.id%BG.length]}`:'';
+const media=it=>it.img?`background-image:url(${encodeURI(it.img)})`:it.emoji?`background:${BG[it.id%BG.length]}`:'';
 const inner=it=>it.img?'':it.emoji;
 
 /* ---------- FILTERS + MENU ---------- */
