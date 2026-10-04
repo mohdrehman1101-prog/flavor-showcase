@@ -1,269 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Premium Cafe Menu</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kapai Coffee House & Bistro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
-<body class="intro-active">
-
-<div class="menu-intro" id="menuIntro" aria-label="Bake ñ Love opening video">
-  <video
-    id="menuIntroVideo"
-    muted
-    playsinline
-    webkit-playsinline
-    preload="none"
-    disablepictureinpicture
-    aria-hidden="true">
-  </video>
-  <div class="intro-loader" id="introLoader" aria-hidden="true">
-    <span></span>
+<body>
+<div class="head">
+  <div class="top">
+    <div class="logo">Kapai<br>Coffee<br>House &amp;<br>Bistro*</div>
+    <div><button class="ib" id="sb">🔍</button><button class="ib" id="fb">☰</button></div>
   </div>
+  <input id="search" placeholder="Search the menu…">
+  <div class="chips" id="main"></div>
+  <div class="chips" id="sub"></div>
 </div>
 
-<div class="phone">
-
-  <!-- ================= HOME ================= -->
-
-  <main id="home">
-
-    <header class="top">
-
-      <div class="logo"><img data-src="/cafe/assets/bake-n-love-logo.png" alt="Bake ñ Love logo"></div>
-
-      <div>
-        <h1>Bake ñ Love</h1>
-        <p>Good coffee. Good mood.</p>
-      </div>
-
-    </header>
-
-
-    <!-- ================= SEARCH ================= -->
-
-    <div class="search">
-
-      <span>⌕</span>
-
-      <input
-        id="search"
-        type="text"
-        placeholder="Search here..."
-      >
-
-    </div>
-
-
-    <!-- ================= NEW MENU ================= -->
-
-    <section class="section">
-
-      <div class="title-row">
-
-        <h2>New Menu</h2>
-
-        <button onclick="showAll()">
-          View All
-        </button>
-
-      </div>
-
-      <div
-        class="products"
-        id="products">
-      </div>
-
-    </section>
-
-
-    <!-- ================= SPECIAL ================= -->
-
-    <section class="special">
-
-      <div class="special-circle"></div>
-
-      <div class="special-text">
-
-        <small>Special</small>
-
-        <h1 id="specialName">
-          Triple Cheese<br>
-          Pizza
-        </h1>
-
-        <p id="specialPrice">
-          ₹199
-        </p>
-
-      </div>
-
-
-      <div class="special-main">
-
-        <img
-          id="specialImage"
-          data-src="/cafe/assets/Tripple Cheese Pizza.png"
-          alt="Triple Cheese Pizza">
-
-      </div>
-
-
-      <div class="floating-drinks">
-
-        <button onclick="special(0)">
-          <img data-src="/cafe/assets/Tripple Cheese Pizza.png">
-        </button>
-
-        <button onclick="special(1)">
-          <img data-src="/cafe/assets/Vegetable Verona Pizza.png">
-        </button>
-
-        <button onclick="special(2)">
-          <img data-src="/cafe/assets/Cheese Corn Pizza.png">
-        </button>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= MENU ================= -->
-
-    <section
-      class="menu-section"
-      id="menuSection">
-
-      <div class="menu-heading">
-
-        <h2>Restaurant Menu</h2>
-
-        <p>
-          Choose your favourite food
-        </p>
-
-      </div>
-
-
-      <!-- CATEGORY -->
-
-      <div
-        class="category-nav"
-        id="categoryNav">
-
-        <button
-          class="category active"
-          onclick="filterCategory('all', this)">
-          All
-        </button>
-
-        <button
-          class="category"
-          onclick="filterCategory('veg', this)">
-          🥗 Veg
-        </button>
-
-        <button
-          class="category"
-          onclick="filterCategory('nonveg', this)">
-          🍗 Non-Veg
-        </button>
-
-        <button
-          class="category"
-          onclick="filterCategory('drinks', this)">
-          🥤 Drinks
-        </button>
-
-      </div>
-
-
-      <!-- MENU ITEMS -->
-
-      <div id="menuGroups" class="menu-groups" aria-label="Menu groups"></div>
-      <div id="menuSubcategories" class="menu-subcategories" aria-label="Menu sub-categories" hidden></div>
-      <div id="catalogue"></div>
-
-    </section>
-
-  </main>
-
-
-  <!-- ================= DETAILS ================= -->
-
-  <section
-    class="details"
-    id="details">
-
-    <header class="details-header">
-
-      <button onclick="closeDetails()">
-        ←
-      </button>
-
-      <h2>Details</h2>
-
-      <button onclick="toggleFavourite()">
-        ♡
-      </button>
-
-    </header>
-
-
-    <div class="details-blue">
-
-      <div class="details-info">
-
-        <h1 id="detailName">
-          Triple Cheese Pizza
-        </h1>
-
-        <div class="rating">
-          ★★★★★
-          <span>4.8</span>
-        </div>
-
-        <h3>
-          Description
-        </h3>
-
-        <p id="detailDescription">
-          
-        </p>
-
-        <div
-          class="detail-view-price"
-          id="detailPrice">
-          ₹199
-        </div>
-
-      </div>
-
-
-      <img
-        id="detailImage"
-        data-src="/cafe/assets/Tripple Cheese Pizza.png"
-        alt="Triple Cheese Pizza">
-
-    </div>
-
-  </section>
-
-
-  <!-- ================= TOAST ================= -->
-
-  <div
-    class="toast"
-    id="toast">
-    Done
-  </div>
-
+<div id="fav">
+  <div class="sec-t"><small>Swipe to explore</small><h2>Kapai Favourites</h2></div>
+  <div class="deck" id="deck"></div>
+  <div class="ctl"><button id="no">✕</button><div class="dots" id="dots"></div><button id="yes">♥</button></div>
+  <div class="hint">Drag, or tap ✕ / ♥ — tap a card for details</div>
+  <button class="surp" id="surp"><span style="font-size:22px">🎲</span><div><b>Can't decide?</b>Tap for a surprise pick</div><span>→</span></button>
 </div>
 
+<div id="menu"></div>
+
+<div class="gm">
+  <div class="sec-t" style="margin-top:8px"><small>One more round?</small><h2>Match the Menu</h2><p>Flip two cards at a time to find every pair.</p></div>
+  <div class="stat">Moves: <b id="mv">0</b> Pairs: <b id="pr">0</b> / 6 <button class="sm" id="mr">Restart</button></div>
+  <div class="mg" id="mg"></div>
+</div>
+<div class="gm">
+  <div class="sec-t"><small>While you decide</small><h2>Piece It Together</h2><p>Slide the tiles to rebuild the picture.</p></div>
+  <div class="stat">Moves: <b id="pm">0</b> <button class="sm" id="ps">Shuffle</button></div>
+  <div class="pz" id="pz"></div>
+</div>
+
+<div class="foot">All prices are exclusive of govt. taxes.<br>Pricing not listed is available from your server or at the counter. Ask us about today's specials.</div>
+<div class="flogo">क</div>
+<button class="fl" id="vs">Visit our full site →</button>
+<button id="top">↑</button>
+<div id="site">
+  <div class="sh"><span class="lg">क</span><b>KAPAI</b><button class="hb">☰</button><button class="vu" id="visit">Visit Us</button></div>
+  <div class="hero"><small>CULTURE · COMMUNITY</small><h1>A third space,<br>brewed for Kanpur.</h1>
+    <p>Specialty coffee, honest comfort food, and a room built for lingering — the neighbourhood café Kanpur didn't have. Until now.</p>
+    <div class="hb2"><button class="g tomenu">View the Menu</button><button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">Visit Us</button></div></div>
+  <div class="story" id="about"><small>OUR STORY</small><h2>KANPUR, FEBRUARY 2024</h2>
+    <p>Founded by <b>Harshveer Singh Bhatia</b>, Kapai — meaning "great" in New Zealand slang — started from one simple gap: the city lacked a real specialty coffee third space. So he built one.</p>
+    <small style="display:block;margin-top:26px">THE FEELING</small><h2>A room built for staying</h2>
+    <p>Cane chairs, warm wood, low pendant light. Kapai isn't designed to turn tables — it's designed for the coffee to go cold while the conversation keeps going. Coffee, culture, community: in that order, every time.</p></div>
+  <div id="toast"><span style="font-size:22px">🍽</span><div><b>New Menu is Live!</b>Tap to explore</div><button class="tx2" id="tx">✕</button></div>
+</div>
+<div class="mo" id="mo"><div class="md" id="md"></div></div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
