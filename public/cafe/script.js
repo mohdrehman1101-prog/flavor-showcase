@@ -2007,7 +2007,7 @@ function detail(it){
 }
 function surprise(){
   const it=items[Math.floor(Math.random()*items.length)];
-  md.innerHTML=`<button class="x">✕</button><div class="pk"><small>✨ YOUR KAPAI PICK</small>
+  md.innerHTML=`<button class="x">✕</button><div class="pk"><small>✨ YOUR BAKE ñ LOVE PICK</small>
   <div class="c" style="${media(it)}">${inner(it)}</div><h2>${it.name}<span>₹${it.price}</span></h2><p>${it.desc}</p>
   <button class="btn" id="again">🎲 Pick Again</button><button class="lnk" id="cl">Perfect, Close</button></div>`;
   mo.classList.add('on');$('#again').onclick=surprise;
