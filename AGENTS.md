@@ -9,8 +9,6 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-The café menu is served from `public/cafe/` and displayed in a viewport-sized iframe on `/`; keep its original HTML/CSS/JavaScript interactions and mobile frame while editing menu data in `script.js`.
-Uploaded dish photos are CDN assets with pointers in `src/assets/dishes/`; use each pointer's URL only for a matching dish so the repository stays free of large binaries.
-The menu opening video is a fully preloaded, muted CDN asset shown by `public/cafe/`; keep a timed fallback so slow or failed networks cannot trap users before the menu.
-- Site images/videos live as real files in `public/cafe/assets/` and are referenced as `/cafe/assets/<name>` — why: CDN `/__l5e/` URLs only work on Lovable hosting, not Netlify. To replace media, overwrite the file with the same name (or update the reference).
-- Menu group navigation uses photo tiles drawn only from matching existing dishes, rendered from category IDs in `public/cafe/script.js` beneath the unchanged type filter; drill down group → sub-category → existing dishes to keep mobile browsing short.
+The café menu is served from `public/cafe/` inside the full-viewport iframe on `/`; use the newly supplied HTML/CSS/JavaScript design as the authoritative source because the user requested an exact replacement of the previous design.
+Dish data is adapted into the supplied script's `items`, `N`, and `FAV` format, preserving existing dish names, prices, descriptions, dietary flags, badges and matching photo paths because only the reference menu's dishes should be replaced.
+Site media stays as real files in `public/cafe/assets/` referenced through `/cafe/assets/<name>` because these paths work on Netlify as well as Lovable; do not reintroduce the removed opening video or old category tile navigation.
