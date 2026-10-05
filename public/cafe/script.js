@@ -1962,6 +1962,12 @@ const FAV=["Triple Cheese Pizza", "Vegetable Verona Pizza", "Cheese Corn Pizza",
 const IMG={"Triple Cheese Pizza": "/cafe/assets/Tripple Cheese Pizza.png", "Vegetable Verona Pizza": "/cafe/assets/Vegetable Verona Pizza.png", "Cheese Corn Pizza": "/cafe/assets/Cheese Corn Pizza.png", "Tandoori Paneer Pizza": "/cafe/assets/Tandoori Paneer Pizza.png", "Peri Peri Paneer Pizza": "/cafe/assets/Peri Peri Paneer Pizza.png", "Chicken Tikka Pizza": "/cafe/assets/Chicken Tikka Pizza.png", "Chicken Keema Pizza": "/cafe/assets/Chicken Keema Pizza.png", "Crispy Corn": "/cafe/assets/Crispy Corn.png", "Honey Chilli Potato": "/cafe/assets/Honey Chilli Potato.png", "Veg Noodles": "/cafe/assets/Veg Noodles.png", "Hakka Noodles": "/cafe/assets/Hakka Noodles.png", "Garlic Noodles": "/cafe/assets/Garlic Noodles.png", "Fried Rice": "/cafe/assets/Fried Rice.png", "Chilli Paneer": "/cafe/assets/Chilli Paneer.png", "Chilli Chicken": "/cafe/assets/Chilli Chicken.png", "Maggi Ramen Bowl": "/cafe/assets/Maggi Ramen Bowl.png", "Asian Bowl": "/cafe/assets/Asian Bowl.png", "Burrito Bliss Bowl": "/cafe/assets/Burrito Bliss Bowl.png", "Lemon Pepper Chicken": "/cafe/assets/Lemon Pepper Chicken.png", "Dragon Paneer": "/cafe/assets/Dragon Paneer.png", "Dragon Chicken": "/cafe/assets/Dragon Chicken.png", "Tomato Garlic Basil Bruschetta": "", "Mince Chicken Bruschetta": "", "Veggie Sandwich (Cold Serve)": "", "Cheese & Corn Sandwich": "", "Sunrise Egg Sandwich": "", "Spinach Corn Sandwich": "", "Creamy Mushroom Sandwich": "", "Smoky Paneer Sandwich": "", "Chicken Tikka Sandwich": "", "Crispy Chicken Sandwich": "", "Peri Peri Chicken Sandwich": "", "Chicken Keema Sandwich": "", "Classic Aloo Tikki Burger": "", "American Burger": "", "Mushroom Sloppy Joy Burger": "", "Peri Peri Paneer Burger": "", "Crispy Chicken Burger": "", "Smash Chicken Burger": "", "Iced Black Coffee": "", "Citrus Spark Americano": "", "Berry Blast Americano": "", "Minty Fresh Brew": "", "Cold Brew": "", "Mocha Chilled Brew": "", "Citrus Cold Brew": "", "Cranberry Cold Brew": "", "Citrus Mocha": "", "Pomegranate Cold Brew": "", "Tonic Cold Brew": "", "Creamy Frappuccino": "", "Classic Vanilla Cold Coffee": "", "Hazelnut Frappe": "", "Caramel Frappe": "", "Dark Mocha": "", "Choco Chip Frappe": "", "Nutty Choco Frappe": "", "Almond Frappe": "", "Virgin Mojito": "", "Green Apple": "", "Watermelon Hydration": "", "Strawberry Mojito": "", "Ginger Ale": "", "Tonic Water": "", "Fresh Lime Soda": "", "Passion Fruit": "", "Orange & Cranberry": "", "Pomegranate Fizz": "", "Redbull Mojito": "", "Morning Sunshine Egg White Bowl": "", "The Bhurji Bowl": "", "Masala Egg Fold": "", "Royal Egg Affair": "", "Anda Dabang with Pav": "", "Chicken Keema Omelette": "", "Farmhouse Potato Bites": "", "Peri-Peri Potato Bites": "", "Cheesy Potato Bites": "", "Chicken Loaded Potato Bites": "", "Chicken Pop Corn": "", "Hummus with Pita Bread": "", "Grilled Paneer": "", "Grilled Fish": "", "Grilled Chicken": "", "Chicken Wings (5pc)": "", "Creamy Cookie Shake": "", "Oreo Shakes": "", "Silky Strawberry Shake": "", "Kit-Kat Shake": "", "Dark Mocha Shake": "", "Blue Berry Shake": "", "Nutella Shake": "", "Biscoff Shake": "", "Belgium Chocolate Shake": "", "Mint Blueberry Smoothie": "", "Nature Blend Smoothie": "", "Peanut Butter Dry Fruits Smoothie": "", "Nutty Protein Smoothie": "", "One serve of Waffle": "", "Two serve of Waffle": "", "Oreo": "", "Kit Kat Crunch": "", "Nutella Loaded": "", "Biscoff": "", "Death by Chocolate": "", "Double Delight": "", "Blueberry Cheese Cake": "", "Biscoff Cheese Cake": "", "Nutella Cheese Cake": "", "Strawberry Swiss Roll": "", "Pineapple Pastry": "", "Choco Chip Pastry": "", "Choco Mini Ball Pastry": "", "Pista Kaju Pastry": "", "Doughnut": "", "Chocolava": "", "Walnut Brownie": "", "Sizzling Brownie with Icecream": "", "Veggie Momo": "", "Kurkure Momo": "", "Butter Garlic Momo": "", "Cheese & Corn Momo": "", "Aloo Wrap Express": "", "Mix Veg": "", "Paneer Bhurji": "", "Masala Keema": "", "Shawarma Chicken": "", "Grilled Fajita Wrap": "", "Arrabiata Pasta": "", "Alfredo Pasta": "", "Aglio-e-Olio Pasta": "", "Pink Sauce Pasta": "", "Mac & Cheese Pasta": "", "Mushroom Soup": "", "Tomato Soup": "", "Hot & Sour Soup": "", "Crunchy Nachos Bites": "", "Melty Cheese Nachos": "", "Nachos Overload": "", "Classic Fries": "", "Peri-Peri Fries": "", "Cheesy Fries": "", "Chicken Cheesy Fries": "", "Korean Bun": "", "Garlic Bread": "", "Cheesy Garlic Bread": "", "Chilly Garlic Bread": "", "Cheese Corn Garlic Bread": "", "Espresso (Coffee shot)": "", "Macchiato (Coffee shot with milk or foam)": "", "Americano (Black coffee)": "", "Affagatto (No milk)": "", "Cappuccino": "", "Cafe Latte": "", "Cafe Mocha": "", "Caramel Macchiato": "", "Spanish Latte": "", "Hazelnut Latte": "", "Caramel Latte": "", "Irish Latte": "", "Vanilla Latte": "", "Kanpur Special Latte": "", "Hot Chocolate": ""};
 const PUZZLE_IMG="/cafe/assets/Tripple Cheese Pizza.png";
 const $=s=>document.querySelector(s);
+const ICONS={search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/>',menu:'<path d="M4 6h16M4 12h16M4 18h16"/>',close:'<path d="m6 6 12 12M18 6 6 18"/>',heart:'<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>',dice:'<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 7h.01M17 7h.01M12 12h.01M7 17h.01M17 17h.01"/>',arrow:'<path d="M5 12h14m-6-6 6 6-6 6"/>',up:'<path d="M12 19V5m-6 6 6-6 6 6"/>',dish:'<path d="M3 17h18M5 14a7 7 0 0 1 14 0H5ZM12 7V4M2 20h20"/>',spark:'<path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"/>'};
+const icon=name=>`<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name]}</svg>`;
+[['#sb','search','Search menu'],['#fb','menu','Menu filters'],['#no','close','Next favourite'],['#yes','heart','Like favourite'],['#top','up','Back to top'],['.sh .hb','menu','Menu'],['#tx','close','Dismiss notice'],['.win-close','close','Close puzzle celebration']].forEach(([selector,name,label])=>{const control=$(selector);control.innerHTML=icon(name);control.setAttribute('aria-label',label)});
+$('#surp span:first-child').outerHTML=icon('dice');
+$('#surp span:last-child').outerHTML=icon('arrow');
+$('#toast span:first-child').outerHTML=icon('dish');
 const media=it=>it.img?`background-image:url('${encodeURI(it.img)}')`:'';
 const cls=it=>it.img?'':' ph';
 const inner=it=>it.img?'':'<b class="phs">Photo coming soon</b>';
@@ -1983,7 +1989,7 @@ function renderMenu(){
       <div class="im${cls(i)}" style="${media(i)}">${inner(i)}</div>
       <div class="b"><div class="n"><span>${i.name}</span><span class="pr">₹${i.price}</span></div>${i.best?`<span class="bs">${i.best}</span>`:''}<p>${i.desc}</p></div></div>`;
   });
-  $('#menu').innerHTML=h+(ls?'</div>':'')||'<p class="hint">Kuch nahi mila 🙈</p>';
+  $('#menu').innerHTML=h+(ls?'</div>':'')||'<p class="hint">Kuch nahi mila</p>';
 }
 $('#main').onclick=e=>{const m=e.target.dataset.m;if(!m)return;F.main=m;F.sub=null;
   document.querySelectorAll('#main .chip').forEach(c=>c.classList.toggle('on',c.dataset.m===m));
@@ -2000,7 +2006,7 @@ const mo=$('#mo'),md=$('#md');
 const close=()=>mo.classList.remove('on');
 mo.onclick=e=>{if(e.target===mo||e.target.closest('.x')||e.target.id==='cl')close()};
 function detail(it){
-  md.innerHTML=`<button class="x">✕</button><div class="dt"><div class="im${cls(it)}" style="${media(it)}">${inner(it)}</div><div class="bd">
+  md.innerHTML=`<button class="x" aria-label="Close details">${icon('close')}</button><div class="dt"><div class="im${cls(it)}" style="${media(it)}">${inner(it)}</div><div class="bd">
   <div class="tg"><span>● ${it.veg?'Veg':'Non-veg'}</span><span>${it.sub}</span></div>
   <h2>${it.name}<span>₹${it.price}</span></h2><p>${it.desc}</p>
   <div class="st"><div><b>1</b><small>SERVES</small></div><div><b>3 MIN</b><small>PREP TIME</small></div><div><b>15 KCAL</b><small>CALORIES</small></div></div>
@@ -2009,9 +2015,9 @@ function detail(it){
 }
 function surprise(){
   const it=items[Math.floor(Math.random()*items.length)];
-  md.innerHTML=`<button class="x">✕</button><div class="pk"><small>✨ YOUR BAKE ñ LOVE PICK</small>
+  md.innerHTML=`<button class="x" aria-label="Close surprise pick">${icon('close')}</button><div class="pk"><small>${icon('spark')} YOUR BAKE ñ LOVE PICK</small>
   <div class="c${cls(it)}" style="${media(it)}">${inner(it)}</div><h2>${it.name}<span>₹${it.price}</span></h2><p>${it.desc}</p>
-  <button class="btn" id="again">🎲 Pick Again</button><button class="lnk" id="cl">Perfect, Close</button></div>`;
+  <button class="btn" id="again">${icon('dice')} Pick Again</button><button class="lnk" id="cl">Perfect, Close</button></div>`;
   mo.classList.add('on');$('#again').onclick=surprise;
 }
 $('#surp').onclick=surprise;
@@ -2064,8 +2070,20 @@ $('#mr').onclick=memInit;memInit();
 /* ---------- SLIDING PUZZLE ---------- */
 const PB=PUZZLE_IMG?`url('${encodeURI(PUZZLE_IMG)}')`:'linear-gradient(135deg,#c9a46a,#6b4a2c 40%,#1d5a63 70%,#f1e1c4)';
 if(!PUZZLE_IMG)$('#pz').insertAdjacentHTML('afterend','<div class="phs" style="margin-top:8px">Photo coming soon</div>');
-let T,pm;
+let T,pm,puzzleWinTimer;
+const puzzleWin=$('#puzzle-win');
+const dismissPuzzleWin=()=>puzzleWin.close();
+function celebratePuzzle(){
+  $('#puzzle-win-text').textContent=`Sirf ${pm} moves mein, kitne smart ho aap! Ab ek yummy treat to banta hai 💕`;
+  if(!puzzleWin.open)puzzleWin.showModal();
+}
+$('#puzzle-replay').onclick=()=>{dismissPuzzleWin();pzInit()};
+$('#puzzle-menu').onclick=dismissPuzzleWin;
+$('.win-close').onclick=dismissPuzzleWin;
+puzzleWin.onclick=e=>{if(e.target===puzzleWin){const r=puzzleWin.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dismissPuzzleWin()}};
+puzzleWin.addEventListener('close',()=>$('#ps').focus({preventScroll:true}));
 function pzInit(){
+  clearTimeout(puzzleWinTimer);
   T=[0,1,2,3,4,5,6,7,8];pm=0;
   for(let i=0;i<150;i++){const e=T.indexOf(8),n=nb(e),r=n[Math.floor(Math.random()*n.length)];[T[e],T[r]]=[T[r],T[e]]}
   $('#pm').textContent=0;pzDraw();
@@ -2077,7 +2095,7 @@ function pzDraw(){
 }
 $('#pz').onclick=e=>{const t=e.target.closest('.pt');if(!t)return;const i=+t.dataset.i,em=T.indexOf(8);
   if(nb(em).includes(i)){[T[i],T[em]]=[T[em],T[i]];pm++;$('#pm').textContent=pm;pzDraw();
-    if(T.every((v,k)=>v===k))setTimeout(()=>alert('Puzzle complete! 🎉'),300)}};
+    if(T.every((v,k)=>v===k))puzzleWinTimer=setTimeout(celebratePuzzle,300)}};
 $('#ps').onclick=pzInit;pzInit();
 
 /* ---------- SCROLL TOP ---------- */
