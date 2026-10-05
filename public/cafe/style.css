@@ -147,3 +147,6 @@ h3.sub{font-size:22px;margin:20px 14px 12px;font-family:inherit;font-weight:800}
 @keyframes win-bounce{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-7px) rotate(5deg)}}
 @keyframes win-confetti{from{opacity:0;transform:translateY(-12px) rotate(0)}20%{opacity:.7}to{opacity:0;transform:translateY(260px) rotate(200deg)}}
 @media(prefers-reduced-motion:reduce){.puzzle-win[open],.win-pizza,.win-confetti i{animation:none}.win-confetti{display:none}}
+.win-pizza{font-family:'Noto Color Emoji',sans-serif}
+.puzzle-win h2{font-family:'Pathway Gothic One','Noto Color Emoji','Oswald','Arial Narrow',Impact,sans-serif}
+.puzzle-win p,.win-actions .sm{font-family:'Public Sans','Noto Color Emoji','Helvetica Neue',Arial,sans-serif}
