@@ -1959,10 +1959,12 @@ const items=[
 ];
 const N={"PIZZERIA MODE": "Vegetable @ ₹30 · Cheese @ ₹50 · Extra Dip @ ₹29", "CHINESE": "Chicken @ ₹80", "SANDWICH": "Extra Dip @ ₹29", "PLATTER": "Rice @ ₹49 · Choice of Sauce: Barbeque, Chilly Garlic, Peri Peri, Butter Garlic", "PASTA": "Chicken @ ₹79 · Vegetable @ ₹49 · Choice of Pasta: Penne, Spaghetti", "FRIES": "Extra Dip @ ₹29", "OT COFFEE (WITH MILK)": "Extra Shot @ ₹49"};
 const FAV=["Triple Cheese Pizza", "Vegetable Verona Pizza", "Cheese Corn Pizza", "Tandoori Paneer Pizza", "Peri Peri Paneer Pizza"];
-const BG=['#e8d5b5','#d9c3a0','#cfe0c0','#f0d5c0','#d8cfe0','#c9dbe0'];
+const IMG={"Triple Cheese Pizza": "/cafe/assets/Tripple Cheese Pizza.png", "Vegetable Verona Pizza": "/cafe/assets/Vegetable Verona Pizza.png", "Cheese Corn Pizza": "/cafe/assets/Cheese Corn Pizza.png", "Tandoori Paneer Pizza": "/cafe/assets/Tandoori Paneer Pizza.png", "Peri Peri Paneer Pizza": "/cafe/assets/Peri Peri Paneer Pizza.png", "Chicken Tikka Pizza": "/cafe/assets/Chicken Tikka Pizza.png", "Chicken Keema Pizza": "/cafe/assets/Chicken Keema Pizza.png", "Crispy Corn": "/cafe/assets/Crispy Corn.png", "Honey Chilli Potato": "/cafe/assets/Honey Chilli Potato.png", "Veg Noodles": "/cafe/assets/Veg Noodles.png", "Hakka Noodles": "/cafe/assets/Hakka Noodles.png", "Garlic Noodles": "/cafe/assets/Garlic Noodles.png", "Fried Rice": "/cafe/assets/Fried Rice.png", "Chilli Paneer": "/cafe/assets/Chilli Paneer.png", "Chilli Chicken": "/cafe/assets/Chilli Chicken.png", "Maggi Ramen Bowl": "/cafe/assets/Maggi Ramen Bowl.png", "Asian Bowl": "/cafe/assets/Asian Bowl.png", "Burrito Bliss Bowl": "/cafe/assets/Burrito Bliss Bowl.png", "Lemon Pepper Chicken": "/cafe/assets/Lemon Pepper Chicken.png", "Dragon Paneer": "/cafe/assets/Dragon Paneer.png", "Dragon Chicken": "/cafe/assets/Dragon Chicken.png", "Tomato Garlic Basil Bruschetta": "", "Mince Chicken Bruschetta": "", "Veggie Sandwich (Cold Serve)": "", "Cheese & Corn Sandwich": "", "Sunrise Egg Sandwich": "", "Spinach Corn Sandwich": "", "Creamy Mushroom Sandwich": "", "Smoky Paneer Sandwich": "", "Chicken Tikka Sandwich": "", "Crispy Chicken Sandwich": "", "Peri Peri Chicken Sandwich": "", "Chicken Keema Sandwich": "", "Classic Aloo Tikki Burger": "", "American Burger": "", "Mushroom Sloppy Joy Burger": "", "Peri Peri Paneer Burger": "", "Crispy Chicken Burger": "", "Smash Chicken Burger": "", "Iced Black Coffee": "", "Citrus Spark Americano": "", "Berry Blast Americano": "", "Minty Fresh Brew": "", "Cold Brew": "", "Mocha Chilled Brew": "", "Citrus Cold Brew": "", "Cranberry Cold Brew": "", "Citrus Mocha": "", "Pomegranate Cold Brew": "", "Tonic Cold Brew": "", "Creamy Frappuccino": "", "Classic Vanilla Cold Coffee": "", "Hazelnut Frappe": "", "Caramel Frappe": "", "Dark Mocha": "", "Choco Chip Frappe": "", "Nutty Choco Frappe": "", "Almond Frappe": "", "Virgin Mojito": "", "Green Apple": "", "Watermelon Hydration": "", "Strawberry Mojito": "", "Ginger Ale": "", "Tonic Water": "", "Fresh Lime Soda": "", "Passion Fruit": "", "Orange & Cranberry": "", "Pomegranate Fizz": "", "Redbull Mojito": "", "Morning Sunshine Egg White Bowl": "", "The Bhurji Bowl": "", "Masala Egg Fold": "", "Royal Egg Affair": "", "Anda Dabang with Pav": "", "Chicken Keema Omelette": "", "Farmhouse Potato Bites": "", "Peri-Peri Potato Bites": "", "Cheesy Potato Bites": "", "Chicken Loaded Potato Bites": "", "Chicken Pop Corn": "", "Hummus with Pita Bread": "", "Grilled Paneer": "", "Grilled Fish": "", "Grilled Chicken": "", "Chicken Wings (5pc)": "", "Creamy Cookie Shake": "", "Oreo Shakes": "", "Silky Strawberry Shake": "", "Kit-Kat Shake": "", "Dark Mocha Shake": "", "Blue Berry Shake": "", "Nutella Shake": "", "Biscoff Shake": "", "Belgium Chocolate Shake": "", "Mint Blueberry Smoothie": "", "Nature Blend Smoothie": "", "Peanut Butter Dry Fruits Smoothie": "", "Nutty Protein Smoothie": "", "One serve of Waffle": "", "Two serve of Waffle": "", "Oreo": "", "Kit Kat Crunch": "", "Nutella Loaded": "", "Biscoff": "", "Death by Chocolate": "", "Double Delight": "", "Blueberry Cheese Cake": "", "Biscoff Cheese Cake": "", "Nutella Cheese Cake": "", "Strawberry Swiss Roll": "", "Pineapple Pastry": "", "Choco Chip Pastry": "", "Choco Mini Ball Pastry": "", "Pista Kaju Pastry": "", "Doughnut": "", "Chocolava": "", "Walnut Brownie": "", "Sizzling Brownie with Icecream": "", "Veggie Momo": "", "Kurkure Momo": "", "Butter Garlic Momo": "", "Cheese & Corn Momo": "", "Aloo Wrap Express": "", "Mix Veg": "", "Paneer Bhurji": "", "Masala Keema": "", "Shawarma Chicken": "", "Grilled Fajita Wrap": "", "Arrabiata Pasta": "", "Alfredo Pasta": "", "Aglio-e-Olio Pasta": "", "Pink Sauce Pasta": "", "Mac & Cheese Pasta": "", "Mushroom Soup": "", "Tomato Soup": "", "Hot & Sour Soup": "", "Crunchy Nachos Bites": "", "Melty Cheese Nachos": "", "Nachos Overload": "", "Classic Fries": "", "Peri-Peri Fries": "", "Cheesy Fries": "", "Chicken Cheesy Fries": "", "Korean Bun": "", "Garlic Bread": "", "Cheesy Garlic Bread": "", "Chilly Garlic Bread": "", "Cheese Corn Garlic Bread": "", "Espresso (Coffee shot)": "", "Macchiato (Coffee shot with milk or foam)": "", "Americano (Black coffee)": "", "Affagatto (No milk)": "", "Cappuccino": "", "Cafe Latte": "", "Cafe Mocha": "", "Caramel Macchiato": "", "Spanish Latte": "", "Hazelnut Latte": "", "Caramel Latte": "", "Irish Latte": "", "Vanilla Latte": "", "Kanpur Special Latte": "", "Hot Chocolate": ""};
+const PUZZLE_IMG="/cafe/assets/Tripple Cheese Pizza.png";
 const $=s=>document.querySelector(s);
-const media=it=>it.img?`background-image:url(${encodeURI(it.img)})`:it.emoji?`background:${BG[it.id%BG.length]}`:'';
-const inner=it=>it.img?'':it.emoji;
+const media=it=>it.img?`background-image:url('${encodeURI(it.img)}')`:'';
+const cls=it=>it.img?'':' ph';
+const inner=it=>it.img?'':'<b class="phs">Photo coming soon</b>';
 
 /* ---------- FILTERS + MENU ---------- */
 let F={main:'All',sub:null,q:''};
@@ -1978,7 +1980,7 @@ function renderMenu(){
     if(i.cat!==lc){h+=`${ls?'</div>':''}<div class="cat">${i.cat.toUpperCase()}</div>`;lc=i.cat;ls=''}
     if(i.sub!==ls){h+=`${ls?'</div>':''}<h3 class="sub" id="s-${i.sub.replace(/\W/g,'')}">${i.sub}</h3>${N[i.sub]?`<div class="note">${N[i.sub]}</div>`:''}<div class="grid">`;ls=i.sub}
     h+=`<div class="it" data-id="${i.id}"><span class="vb${i.veg?'':' nv'}"><i></i></span>
-      <div class="im${i.img||i.emoji?'':' ph'}" style="${media(i)}">${i.img?'':i.emoji||'Photo coming soon'}</div>
+      <div class="im${cls(i)}" style="${media(i)}">${inner(i)}</div>
       <div class="b"><div class="n"><span>${i.name}</span><span class="pr">₹${i.price}</span></div>${i.best?`<span class="bs">${i.best}</span>`:''}<p>${i.desc}</p></div></div>`;
   });
   $('#menu').innerHTML=h+(ls?'</div>':'')||'<p class="hint">Kuch nahi mila 🙈</p>';
@@ -1998,7 +2000,7 @@ const mo=$('#mo'),md=$('#md');
 const close=()=>mo.classList.remove('on');
 mo.onclick=e=>{if(e.target===mo||e.target.closest('.x')||e.target.id==='cl')close()};
 function detail(it){
-  md.innerHTML=`<button class="x">✕</button><div class="dt"><div class="im" style="${media(it)}">${inner(it)}</div><div class="bd">
+  md.innerHTML=`<button class="x">✕</button><div class="dt"><div class="im${cls(it)}" style="${media(it)}">${inner(it)}</div><div class="bd">
   <div class="tg"><span>● ${it.veg?'Veg':'Non-veg'}</span><span>${it.sub}</span></div>
   <h2>${it.name}<span>₹${it.price}</span></h2><p>${it.desc}</p>
   <div class="st"><div><b>1</b><small>SERVES</small></div><div><b>3 MIN</b><small>PREP TIME</small></div><div><b>15 KCAL</b><small>CALORIES</small></div></div>
@@ -2008,7 +2010,7 @@ function detail(it){
 function surprise(){
   const it=items[Math.floor(Math.random()*items.length)];
   md.innerHTML=`<button class="x">✕</button><div class="pk"><small>✨ YOUR BAKE ñ LOVE PICK</small>
-  <div class="c" style="${media(it)}">${inner(it)}</div><h2>${it.name}<span>₹${it.price}</span></h2><p>${it.desc}</p>
+  <div class="c${cls(it)}" style="${media(it)}">${inner(it)}</div><h2>${it.name}<span>₹${it.price}</span></h2><p>${it.desc}</p>
   <button class="btn" id="again">🎲 Pick Again</button><button class="lnk" id="cl">Perfect, Close</button></div>`;
   mo.classList.add('on');$('#again').onclick=surprise;
 }
@@ -2021,7 +2023,7 @@ function deck(){
   const d=$('#deck');d.innerHTML='';
   [idx+1,idx].forEach((k,z)=>{
     const it=fav[k%fav.length];const c=document.createElement('div');c.className='sc';
-    c.innerHTML=`<div class="im" style="${media(it)}">${inner(it)}</div><div class="tx"><div class="r"><span>${it.name}</span><span>₹${it.price}</span></div><p>${it.desc}</p></div>${z?'<div class="next">NEXT</div>':''}`;
+    c.innerHTML=`<div class="im${cls(it)}" style="${media(it)}">${inner(it)}</div><div class="tx"><div class="r"><span>${it.name}</span><span>₹${it.price}</span></div><p>${it.desc}</p></div>${z?'<div class="next">NEXT</div>':''}`;
     if(!z){c.style.transform='scale(.95)';c.style.opacity='.9'}else drag(c,it);
     d.appendChild(c);
   });
@@ -2043,11 +2045,13 @@ $('#no').onclick=()=>act(-1);$('#yes').onclick=()=>act(1);
 deck();
 
 /* ---------- MATCH THE MENU ---------- */
+/* Yeh 6 dishes ki photo (upar IMG se) cards par dikhegi. Photo na ho to dish ka naam + "Photo coming soon" dikhega. */
+const MEM=["Triple Cheese Pizza", "Vegetable Verona Pizza", "Cheese Corn Pizza", "Tandoori Paneer Pizza", "Peri Peri Paneer Pizza", "Chicken Tikka Pizza"];
 let mv,pairs,open,lock;
 function memInit(){
-  const em=['☕','🍕','🍝','🍰','🧊','🍟'];const a=[...em,...em].sort(()=>Math.random()-.5);
+  const a=[...MEM,...MEM].sort(()=>Math.random()-.5);
   mv=0;pairs=0;open=[];lock=0;$('#mv').textContent=0;$('#pr').textContent=0;
-  $('#mg').innerHTML=a.map(e=>`<div class="mc" data-e="${e}"><div><span class="bk"><img src="/cafe/assets/bake-n-love-logo.png" alt="Bake ñ Love"></span><span class="fr">${e}</span></div></div>`).join('');
+  $('#mg').innerHTML=a.map(n=>`<div class="mc" data-e="${n}"><div><span class="bk"><img src="/cafe/assets/bake-n-love-logo.png" alt="Bake ñ Love"></span><span class="fr"${IMG[n]?` style="background-image:url('${encodeURI(IMG[n])}')"`:''}>${IMG[n]?'':`<b class="phs">${n}<br>Photo coming soon</b>`}</span></div></div>`).join('');
 }
 $('#mg').onclick=e=>{const c=e.target.closest('.mc');
   if(!c||lock||c.classList.contains('f'))return;c.classList.add('f');open.push(c);
@@ -2058,7 +2062,8 @@ $('#mg').onclick=e=>{const c=e.target.closest('.mc');
 $('#mr').onclick=memInit;memInit();
 
 /* ---------- SLIDING PUZZLE ---------- */
-const PB='linear-gradient(135deg,#c9a46a,#6b4a2c 40%,#1d5a63 70%,#f1e1c4)';
+const PB=PUZZLE_IMG?`url('${encodeURI(PUZZLE_IMG)}')`:'linear-gradient(135deg,#c9a46a,#6b4a2c 40%,#1d5a63 70%,#f1e1c4)';
+if(!PUZZLE_IMG)$('#pz').insertAdjacentHTML('afterend','<div class="phs" style="margin-top:8px">Photo coming soon</div>');
 let T,pm;
 function pzInit(){
   T=[0,1,2,3,4,5,6,7,8];pm=0;
@@ -2068,7 +2073,7 @@ function pzInit(){
 function nb(i){const r=[],x=i%3,y=Math.floor(i/3);if(x>0)r.push(i-1);if(x<2)r.push(i+1);if(y>0)r.push(i-3);if(y<2)r.push(i+3);return r}
 function pzDraw(){
   $('#pz').innerHTML=T.map((t,i)=>t===8?`<div class="pt e" data-i="${i}"></div>`:
-   `<div class="pt" data-i="${i}" style="background-image:${PB};background-position:${(t%3)*50}% ${Math.floor(t/3)*50}%">${['☕','🍰','🥐','🍕','🧁','🍝','🍟','🥤'][t]}</div>`).join('');
+   `<div class="pt" data-i="${i}" style="background-image:${PB};background-position:${(t%3)*50}% ${Math.floor(t/3)*50}%">${PUZZLE_IMG?'':t+1}</div>`).join('');
 }
 $('#pz').onclick=e=>{const t=e.target.closest('.pt');if(!t)return;const i=+t.dataset.i,em=T.indexOf(8);
   if(nb(em).includes(i)){[T[i],T[em]]=[T[em],T[i]];pm++;$('#pm').textContent=pm;pzDraw();

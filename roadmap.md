@@ -7,3 +7,5 @@
 - [x] Replace the category chips below the type filter with video-style photographic category tiles and drill-down, preserving names and current theme.
 
 - [x] Replace the previous menu with the newly uploaded exact design, preserving existing dishes and matching photos; verify search, filters, details, swipe cards and games.
+
+- [ ] Apply the latest supplied HTML, pastel CSS and photo-based games exactly, preserving all existing dishes and Bake ñ Love logos; verify the live menu.
