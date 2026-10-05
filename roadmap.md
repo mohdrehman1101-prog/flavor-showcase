@@ -9,3 +9,4 @@
 - [x] Replace the previous menu with the newly uploaded exact design, preserving existing dishes and matching photos; verify search, filters, details, swipe cards and games.
 
 - [x] Apply the latest supplied HTML, pastel CSS and photo-based games exactly, preserving all existing dishes and Bake ñ Love logos; verify the live menu.
+- [x] Replace the puzzle completion alert with a themed celebration and replace control emojis with line icons; verify replay, dismiss and mobile layout without changing other menu behavior.
