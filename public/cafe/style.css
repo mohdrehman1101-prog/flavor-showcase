@@ -2,6 +2,8 @@
 :root{--bg:#F8F3EF;--card:#FFFDFB;--dark:#1F2F3A;--sky:#A9D6EE;--sky-deep:#2F6F96;--on-sky:#16384D;--sage:#B1C3BA;--sage-soft:#EFE9E1;--pink:#F6DDE1;--pink-deep:#9A5662;--mut:#74838D;--line:#E8E0D8;--pill:#EFE9E1;--rule:#DDD3C9}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{background:var(--bg);color:var(--dark);font-family:'Public Sans','Helvetica Neue',Arial,sans-serif;max-width:400px;margin:auto;padding-bottom:40px}
+/* Fill phone/tablet screens without enlarging the original swipe cards. */
+@media(max-width:1024px){body{width:100%;max-width:none}.deck#deck{width:min(76%,304px)}}
 
 .head{position:sticky;top:0;z-index:20;background:var(--bg);padding:0}
 .top{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1px solid var(--rule)}
