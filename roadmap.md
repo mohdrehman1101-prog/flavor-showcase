@@ -10,3 +10,4 @@
 
 - [x] Apply the latest supplied HTML, pastel CSS and photo-based games exactly, preserving all existing dishes and Bake ñ Love logos; verify the live menu.
 - [x] Replace the puzzle completion alert with a themed celebration and replace control emojis with line icons; verify replay, dismiss and mobile layout without changing other menu behavior.
+- [ ] Fit the complete menu to phone and tablet screen widths while preserving the original swipe-card size and design.
