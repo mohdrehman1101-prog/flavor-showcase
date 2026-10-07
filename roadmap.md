@@ -11,4 +11,4 @@
 - [x] Apply the latest supplied HTML, pastel CSS and photo-based games exactly, preserving all existing dishes and Bake ñ Love logos; verify the live menu.
 - [x] Replace the puzzle completion alert with a themed celebration and replace control emojis with line icons; verify replay, dismiss and mobile layout without changing other menu behavior.
 - [x] Fit the complete menu to phone and tablet screen widths while preserving the original swipe-card size and supplied design; add no new design. Verified 320–1024px widths, search and dish details.
-- [ ] Extend the same screen fit to laptops and tablets without changing the supplied design or swipe-card size; verify menu and search.
+- [x] Extend the same screen fit to laptops and tablets without changing the supplied design or swipe-card size; verified 384, 768, 1024, 1280 and 1366px widths, search and dish details.
