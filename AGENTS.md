@@ -13,4 +13,4 @@ The café menu is served from `public/cafe/` inside the full-viewport iframe on 
 Dish data is adapted into the supplied script's `items`, `N`, `FAV`, `IMG`, `MEM` and `PUZZLE_IMG` format, preserving existing dish names, prices, descriptions, dietary flags, badges and matching photo paths because only the reference menu's dishes should be replaced.
 Site media stays as real files in `public/cafe/assets/` referenced through `/cafe/assets/<name>` because these paths work on Netlify as well as Lovable; do not reintroduce the removed opening video or old category tile navigation.
 Puzzle completion uses a native dialog styled with existing café tokens, and control icons use inline SVG with currentColor, to preserve the static menu theme and keyboard accessibility.
-Phone and tablet menu widths fill the viewport up to 1024px, while the swipe deck keeps its original capped width independently of the page, to avoid outer gutters without enlarging cards.
+Phone, tablet and laptop menu widths fill the viewport, while the swipe deck keeps its original capped width independently of the page, to avoid outer gutters without enlarging swipe cards.
